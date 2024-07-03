@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Report the Dog</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: skyblue;
+    }
+
+    #reportForm {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="file"],
+    button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<form id="reportForm">
+    <h1>Report the Dog</h1>
+    <label for="Email">Enter your email *</label>
+    <input type="email" id="email" name="phone" required>
+
+    <label for="dogPhoto">Photo of the Dog</label>
+    <input type="file" id="dogPhoto" name="dogPhoto" accept="image/*">
+
+    <div id="loadingMessage" style="display: none;">
+        <p>Analysing the image...</p>
+        <img src="./loading.gif" alt="Loading" width="50" height="50">
+    </div>
+
+    <button type="button" onclick="locateMe()">Locate Me</button>
+    <input type="button" value="Report" id="reportButton">
+</form>
+
+<div id="notification" style="display: none;">
+    <h2>CONGRATULATIONS</h2>
+    <p>Message sent to the team successfully! They are on the way</p>
+     
+    <div>
+        <img src="./blue_tick.gif" alt="Blue Tick" width="50" height="50">
+    </div>
+</div>
+
+
+<script src="./app.js"></script>
+</body>
+</html>
